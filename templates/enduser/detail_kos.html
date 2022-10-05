@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>KosNaiveBayes - Detail Kos</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="{{ url_for('static', filename='user_src/css/styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'enduser/partial/navigasi.html' %}
+
+    <!-- Masthead-->
+    <header class="masthead" style="padding-top: 2em; padding-bottom: 2em;">
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-xl-6">
+            <div class="text-center text-white">
+              <!-- Page heading-->
+              <h1 class="m-0">
+                Detail Kos
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Icons Grid-->
+    <section class="features-icons bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="offset-md-2 col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title mb-4">
+                  Deskripsi Kos:
+                  <span class="font-weight-bold" style="color: grey;"
+                    >{{ kos[0][9] }}</span
+                  >
+                </h4>
+                <table class="table table-striped table-borderless">
+                  <tbody>
+                    <tr>
+                      <td>Jarak Perjalanan</td>
+                      <td>:</td>
+                      <td>{{ kos[0][1] }} menit</td>
+                    </tr>
+                    <tr>
+                      <td>Ukuran Kamar</td>
+                      <td>:</td>
+                      <td>{{ kos[0][2] }}m X {{ kos[0][3] }}m</td>
+                    </tr>
+                    <tr>
+                      <td>Fasilitas Kos</td>
+                      <td>:</td>
+                      <td>{{ kos[0][4] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Area Kos</td>
+                      <td>:</td>
+                      <td>{{ kos[0][5] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Harga Kamar</td>
+                      <td>:</td>
+                      <td>Rp.{{ kos[0][6] }}/Bulan</td>
+                    </tr>
+                    <tr>
+                      <td>Rating Kos</td>
+                      <td>:</td>
+                      <td>{{ kos[0][10] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Alamat Kos</td>
+                      <td>:</td>
+                      <td>{{ kos[0][7] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Kontak Kos</td>
+                      <td>:</td>
+                      <td>{{ kos[0][8] }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item"><a href="#!">About</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Contact</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">
+              &copy; Your Website 2021. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item me-4">
+                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+              </li>
+              <li class="list-inline-item me-4">
+                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="{{ url_for('static', filename='user_src/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Plugins -->
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='user_src/js/scripts.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>KosNaiveBayes - Website Rekomendasi Kos</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="{{ url_for('static', filename='user_src/css/styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'enduser/partial/navigasi.html' %}
+
+    <!-- Masthead-->
+    <header class="masthead" style="padding-top: 2em; padding-bottom: 2em;">
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-xl-6">
+            <div class="text-center text-white">
+              <!-- Page heading-->
+              <h1 class="mb-0">
+                Form Pengisian
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Icons Grid-->
+    <section class="features-icons bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="offset-lg-1 col-lg-10">
+            <div class="card">
+              <div class="card-body">
+                <p style="font-size: 1.5rem;">
+                  Isi Semua Opsi Pertanyaan di Bawah Sesuai Keinginan.
+                </p>
+                <form action="/hasil-rekomendasi" method="post">
+                  <!-- #1 Jarak -->
+                  <div class="form-group mb-3">
+                    <span class="d-block mb-2" style="font-weight: bolder;"
+                      >1. Kira - kira jarak perjalanan dari kos ke kampus berapa
+                      menit</span
+                    >
+                    <!-- <input type="hidden" name="kelompok[]" value="1" /> -->
+                    <input
+                      type="hidden"
+                      id="jarak"
+                      name="kelompok_jarak"
+                      value=""
+                    />
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="jarak-1"
+                        class="click"
+                        name="jarak"
+                        value="1"
+                      />
+                      3 - 4 Menit</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="jarak-2"
+                        class="click"
+                        name="jarak"
+                        value="1"
+                      />
+                      5 - 7 Menit</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="jarak-3"
+                        class="click"
+                        name="jarak"
+                        value="2"
+                      />
+                      8 - 10 Menit</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="jarak-4"
+                        class="click"
+                        name="jarak"
+                        value="2"
+                      />
+                      11 - 15 Menit</label
+                    >
+                  </div>
+                  <!-- #2 Ukuran Kamar -->
+                  <div class="form-group mb-3">
+                    <span class="d-block mb-2" style="font-weight: bolder;"
+                      >2. Perkiraan ukuran kamar kos</span
+                    >
+                    <!-- <input type="hidden" name="kelompok[]" value="2" /> -->
+                    <input
+                      type="hidden"
+                      id="ukuran"
+                      name="kelompok_ukuran"
+                      value=""
+                    />
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="ukuran-1"
+                        class="click"
+                        name="ukuran"
+                        value="1"
+                      />
+                      6 - 9 Meter Persegi</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="ukuran-2"
+                        class="click"
+                        name="ukuran"
+                        value="1"
+                      />
+                      10 - 15 Meter Persegi</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="ukuran-3"
+                        class="click"
+                        name="ukuran"
+                        value="2"
+                      />
+                      16 - 24 Meter Persegi</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="ukuran-4"
+                        class="click"
+                        name="ukuran"
+                        value="2"
+                      />
+                      25 - 40 Meter Persegi</label
+                    >
+                  </div>
+                  <!-- #3 Jumlah Fasilitas -->
+                  <div class="form-group mb-3">
+                    <span class="d-block mb-2" style="font-weight: bolder;"
+                      >3. Jumlah fasilitas dalam kos</span
+                    >
+                    <!-- <input type="hidden" name="kelompok[]" value="3" /> -->
+                    <input
+                      type="hidden"
+                      id="fasilitas"
+                      name="kelompok_fasilitas"
+                      value=""
+                    />
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="fasilitas-1"
+                        class="click"
+                        name="fasilitas"
+                        value="1"
+                      />
+                      1</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="fasilitas-2"
+                        class="click"
+                        name="fasilitas"
+                        value="2"
+                      />
+                      2</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="fasilitas-3"
+                        class="click"
+                        name="fasilitas"
+                        value="3"
+                      />
+                      3</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="fasilitas-4"
+                        class="click"
+                        name="fasilitas"
+                        value="4"
+                      />
+                      4</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="fasilitas-5"
+                        class="click"
+                        name="fasilitas"
+                        value="5"
+                      />
+                      5</label
+                    >
+                  </div>
+                  <!-- #4 Jumlah Area Umum -->
+                  <div class="form-group mb-3">
+                    <span class="d-block mb-2" style="font-weight: bolder;"
+                      >4. Perkiraan jumlah fasilitas umum di area kos</span
+                    >
+                    <!-- <input type="hidden" name="kelompok[]" value="4" /> -->
+                    <input
+                      type="hidden"
+                      id="area"
+                      name="kelompok_area"
+                      value=""
+                    />
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="area-1"
+                        class="click"
+                        name="area"
+                        value="1"
+                      />
+                      1</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="area-2"
+                        class="click"
+                        name="area"
+                        value="1"
+                      />
+                      2</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="area-3"
+                        class="click"
+                        name="area"
+                        value="1"
+                      />
+                      3</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="area-4"
+                        class="click"
+                        name="area"
+                        value="2"
+                      />
+                      4</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="area-5"
+                        class="click"
+                        name="area"
+                        value="2"
+                      />
+                      5</label
+                    >
+                  </div>
+                  <!-- #5 Harga -->
+                  <div class="form-group mb-3">
+                    <span class="d-block mb-2" style="font-weight: bolder;"
+                      >5. Perkiraan harga kamar kos</span
+                    >
+                    <!-- <input type="hidden" name="kelompok[]" value="5" /> -->
+                    <input
+                      type="hidden"
+                      id="harga"
+                      name="kelompok_harga"
+                      value=""
+                    />
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="harga-1"
+                        class="click"
+                        name="harga"
+                        value="1"
+                      />
+                      Rp300.000 - Rp400.000</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="harga-2"
+                        class="click"
+                        name="harga"
+                        value="1"
+                      />
+                      Rp410.000 - Rp500.000</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="harga-3"
+                        class="click"
+                        name="harga"
+                        value="2"
+                      />
+                      Rp510.000 - Rp600.000</label
+                    >
+                    <label class="d-block"
+                      ><input
+                        type="radio"
+                        id="harga-4"
+                        class="click"
+                        name="harga"
+                        value="2"
+                      />
+                      Rp610.000 - Rp750.000</label
+                    >
+                  </div>
+                  <div class="form-group mt-4">
+                    <button type="submit" class="btn btn-primary d-block w-100">
+                      Proses
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item"><a href="#!">About</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Contact</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">
+              &copy; Your Website 2021. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item me-4">
+                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+              </li>
+              <li class="list-inline-item me-4">
+                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- JQuery JS-->
+    <script src="{{ url_for('static', filename='user_src/js/jquery.min.js') }}"></script>
+    <!-- Bootstrap core JS-->
+    <script src="{{ url_for('static', filename='user_src/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='user_src/js/scripts.js') }}"></script>
+    <script>
+      $(function () {
+        $(".click").click(function (e) {
+          let nilai = $(e.target).attr("id");
+          let tmpNilai = nilai.split("-");
+          $("#" + tmpNilai[0]).val(tmpNilai[1]);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -36,4 +36,4 @@ Dashboard for Admin
 
 ## Date Launch
 
-This project started on August 2021 and finished on January 2022
+This project started on October 2021 and finished on January 2022
